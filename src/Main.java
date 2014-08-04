@@ -1,4 +1,3 @@
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -15,7 +14,6 @@ import java.util.Date;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -165,7 +163,7 @@ public class Main {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		while (!exit) {
-			if (polling && System.currentTimeMillis() - previousPoll > 2000) {
+			if (polling && System.currentTimeMillis() - previousPoll > 900000) {
 				String pollResult = poll();
 				label.setText("<html>" + pollResult + "</html>");
 				System.out.print(pollResult);
@@ -174,7 +172,7 @@ public class Main {
 				previousPoll = System.currentTimeMillis();
 			} else {
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(10000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -320,13 +318,10 @@ public class Main {
 			frame.repaint();
 			polling = true;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
