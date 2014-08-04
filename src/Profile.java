@@ -2,7 +2,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Class implements Serializable{
+public class Profile implements Serializable{
 	/**
 	 * 
 	 */
@@ -13,7 +13,7 @@ public class Class implements Serializable{
 	public String notifyEmail;
 	public boolean email = false;
 	
-	public Class(ArrayList<String> nameList, ArrayList<String> urlList, int desiredSeats, String notifyEmail){
+	public Profile(ArrayList<String> nameList, ArrayList<String> urlList, int desiredSeats, String notifyEmail){
 		this.nameList = nameList;
 		this.urlList = urlList;
 		this.desiredSeats = desiredSeats;
